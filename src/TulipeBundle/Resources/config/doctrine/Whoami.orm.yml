@@ -1,0 +1,19 @@
+TulipeBundle\Entity\Whoami:
+    type: entity
+    table: null
+    repositoryClass: TulipeBundle\Repository\WhoamiRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        text:
+            type: text
+
+    manyToOne:
+        image:
+            targetEntity: TulipeBundle\Entity\Image
+            cascade: ["persist", "remove"]
+    lifecycleCallbacks: {  }

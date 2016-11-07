@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    {% block stylesheets %}
+        <link href="{{ asset('favicon.ico')}}" rel="icon" type="image/x-icon" />
+        <!-- Compiled and minified CSS -->
+        <link rel="stylesheet" href="https://opensource.keycdn.com/fontawesome/4.6.3/font-awesome.min.css" integrity="sha384-Wrgq82RsEean5tP3NK3zWAemiNEXofJsTwTyHmNb/iL3dP/sZJ4+7sOld1uqYJtE" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.css">
+        <link rel="stylesheet" type="text/css" href="{{ asset ('bundles/chouettes/stylesheets/main.css') }}"/>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Baloo+Bhai" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Sacramento" rel="stylesheet">
+        <!-- <link href="http://www.fontspace.com/david-kerkhoff/dk-butterfly-ball?text=" rel="stylesheet"> -->
+
+        <link href="https://fonts.googleapis.com/css?family=Didact+Gothic" rel="stylesheet">
+    {% endblock %}
+
+    <title>{% block title %}Chouettes Hiboux et Bijoux{% endblock %}</title>
+</head>
+
+
+
+
+{% block header %}
+{% endblock %}
+
+
+{% block body %}
+{%  endblock %}
+
+<footer class="page-footer">
+
+</footer>
+
+{% block javascripts %}
+    <!--  Scripts-->
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+    {#<script src="{{ asset ('bundles/chouettes/js/materialize.js') }}"></script>#}
+    {#<script src="{{ asset ('bundles/chouettes/js/init.js') }}"></script>#}
+    {#<script src="{{ asset ('bundles/chouettes/js/modernizr.custom.js') }}"></script>#}
+    {#<script src="{{ asset ('bundles/chouettes/js/grid.js') }}"></script>#}
+    {#<script src="{{ asset ('bundles/chouettes/js/chouettesHiboux.js') }}"></script>#}
+
+
+{% endblock %}
+
+
+</body>
+</html>
+

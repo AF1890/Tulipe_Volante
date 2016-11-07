@@ -1,0 +1,20 @@
+tulipe_image:
+    resource: "@TulipeBundle/Resources/config/routing/image.yml"
+    prefix:   /image
+
+tulipe_categorie:
+    resource: "@TulipeBundle/Resources/config/routing/categorie.yml"
+    prefix:   /categorie
+
+tulipe_modele:
+    resource: "@TulipeBundle/Resources/config/routing/modele.yml"
+    prefix:   /modele
+
+tulipe_whoami:
+    resource: "@TulipeBundle/Resources/config/routing/whoami.yml"
+    prefix:   /whoami
+
+
+tulipe_homepage:
+    path:     /
+    defaults: { _controller: TulipeBundle:Default:index }

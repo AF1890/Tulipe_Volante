@@ -1,0 +1,17 @@
+TulipeBundle\Entity\Image:
+    type: entity
+    table: null
+    repositoryClass: TulipeBundle\Repository\ImageRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        url:
+            type: text
+        alt:
+            type: string
+            length: 255
+    lifecycleCallbacks: {  }

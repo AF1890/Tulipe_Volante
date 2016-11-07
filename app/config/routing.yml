@@ -1,0 +1,7 @@
+tulipe:
+    resource: "@TulipeBundle/Resources/config/routing.yml"
+    prefix:   /
+
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation

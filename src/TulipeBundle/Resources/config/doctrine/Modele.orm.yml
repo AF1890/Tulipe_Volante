@@ -1,0 +1,24 @@
+TulipeBundle\Entity\Modele:
+    type: entity
+    table: null
+    repositoryClass: TulipeBundle\Repository\ModeleRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        titre:
+            type: string
+            length: 255
+        contenu:
+            type: text
+
+    manyToOne:
+        categorie:
+            targetEntity: TulipeBundle\Entity\Categorie
+        image:
+            targetEntity: TulipeBundle\Entity\Image
+            cascade: ["persist", "remove"]
+    lifecycleCallbacks: {  }

@@ -1,0 +1,15 @@
+TulipeBundle\Entity\Categorie:
+    type: entity
+    table: null
+    repositoryClass: TulipeBundle\Repository\CategorieRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        nom:
+            type: string
+            length: 255
+    lifecycleCallbacks: {  }
