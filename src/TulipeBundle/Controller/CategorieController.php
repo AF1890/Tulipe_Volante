@@ -78,7 +78,7 @@ class CategorieController extends Controller
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('categorie_edit', array('id' => $categorie->getId()));
+            return $this->redirectToRoute('categorie_index', array('id' => $categorie->getId()));
         }
 
         return $this->render('@Tulipe/categorie/edit.html.twig', array(
