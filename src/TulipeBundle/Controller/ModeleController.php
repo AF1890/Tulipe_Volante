@@ -51,19 +51,7 @@ class ModeleController extends Controller
         ));
     }
 
-    /**
-     * Finds and displays a modele entity.
-     *
-     */
-    public function showAction(Modele $modele)
-    {
-        $deleteForm = $this->createDeleteForm($modele);
 
-        return $this->render('modele/show.html.twig', array(
-            'modele' => $modele,
-            'delete_form' => $deleteForm->createView(),
-        ));
-    }
 
     /**
      * Displays a form to edit an existing modele entity.

@@ -11,9 +11,9 @@ TulipeBundle\Entity\Whoami:
     fields:
         text:
             type: text
+    lifecycleCallbacks: {  }
 
     manyToOne:
         image:
             targetEntity: TulipeBundle\Entity\Image
             cascade: ["persist", "remove"]
-    lifecycleCallbacks: {  }

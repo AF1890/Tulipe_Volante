@@ -9,16 +9,16 @@ TulipeBundle\Entity\Modele:
             generator:
                 strategy: AUTO
     fields:
-        titre:
+        title:
             type: string
             length: 255
-        contenu:
+        content:
             type: text
 
+    lifecycleCallbacks: {  }
     manyToOne:
         categorie:
             targetEntity: TulipeBundle\Entity\Categorie
         image:
             targetEntity: TulipeBundle\Entity\Image
             cascade: ["persist", "remove"]
-    lifecycleCallbacks: {  }

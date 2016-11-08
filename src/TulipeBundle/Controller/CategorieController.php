@@ -51,19 +51,19 @@ class CategorieController extends Controller
         ));
     }
 
-    /**
-     * Finds and displays a categorie entity.
-     *
-     */
-    public function showAction(Categorie $categorie)
-    {
-        $deleteForm = $this->createDeleteForm($categorie);
-
-        return $this->render('categorie/show.html.twig', array(
-            'categorie' => $categorie,
-            'delete_form' => $deleteForm->createView(),
-        ));
-    }
+//    /**
+//     * Finds and displays a categorie entity.
+//     *
+//     */
+//    public function showAction(Categorie $categorie)
+//    {
+//        $deleteForm = $this->createDeleteForm($categorie);
+//
+//        return $this->render('categorie/show.html.twig', array(
+//            'categorie' => $categorie,
+//            'delete_form' => $deleteForm->createView(),
+//        ));
+//    }
 
     /**
      * Displays a form to edit an existing categorie entity.
