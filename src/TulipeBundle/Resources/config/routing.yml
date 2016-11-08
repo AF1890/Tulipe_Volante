@@ -4,7 +4,7 @@ tulipe_image:
 
 tulipe_categorie:
     resource: "@TulipeBundle/Resources/config/routing/categorie.yml"
-    prefix:   /categorie
+    prefix:   admin/categorie
 
 tulipe_modele:
     resource: "@TulipeBundle/Resources/config/routing/modele.yml"
@@ -18,3 +18,11 @@ tulipe_whoami:
 tulipe_homepage:
     path:     /
     defaults: { _controller: TulipeBundle:Default:index }
+
+#-----------------------------------------------------------------------------------------------------
+#Route accueil admin
+#-----------------------------------------------------------------------------------------------------
+
+admin_homepage:
+    path:     /admin
+    defaults: { _controller: TulipeBundle:Default:admin }

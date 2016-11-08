@@ -22,7 +22,7 @@ class CategorieController extends Controller
 
         $categories = $em->getRepository('TulipeBundle:Categorie')->findAll();
 
-        return $this->render('categorie/index.html.twig', array(
+        return $this->render('@Tulipe/Admin/categorie/index.html.twig', array(
             'categories' => $categories,
         ));
     }
@@ -42,28 +42,15 @@ class CategorieController extends Controller
             $em->persist($categorie);
             $em->flush($categorie);
 
-            return $this->redirectToRoute('categorie_show', array('id' => $categorie->getId()));
+            return $this->redirectToRoute('categorie_index', array('id' => $categorie->getId()));
         }
 
-        return $this->render('categorie/new.html.twig', array(
+        return $this->render('@Tulipe/Admin/categorie/new.html.twig', array(
             'categorie' => $categorie,
             'form' => $form->createView(),
         ));
     }
 
-//    /**
-//     * Finds and displays a categorie entity.
-//     *
-//     */
-//    public function showAction(Categorie $categorie)
-//    {
-//        $deleteForm = $this->createDeleteForm($categorie);
-//
-//        return $this->render('categorie/show.html.twig', array(
-//            'categorie' => $categorie,
-//            'delete_form' => $deleteForm->createView(),
-//        ));
-//    }
 
     /**
      * Displays a form to edit an existing categorie entity.
@@ -78,10 +65,10 @@ class CategorieController extends Controller
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('categorie_edit', array('id' => $categorie->getId()));
+            return $this->redirectToRoute('categorie_index');
         }
 
-        return $this->render('categorie/edit.html.twig', array(
+        return $this->render('@Tulipe/Admin/categorie/edit.html.twig', array(
             'categorie' => $categorie,
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),

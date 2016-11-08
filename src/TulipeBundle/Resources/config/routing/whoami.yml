@@ -3,11 +3,6 @@ whoami_index:
     defaults: { _controller: "TulipeBundle:Whoami:index" }
     methods:  GET
 
-whoami_show:
-    path:     /{id}/show
-    defaults: { _controller: "TulipeBundle:Whoami:show" }
-    methods:  GET
-
 whoami_new:
     path:     /new
     defaults: { _controller: "TulipeBundle:Whoami:new" }

@@ -22,7 +22,7 @@ class WhoamiController extends Controller
 
         $whoamis = $em->getRepository('TulipeBundle:Whoami')->findAll();
 
-        return $this->render('whoami/index.html.twig', array(
+        return $this->render('@Tulipe/Admin/whoami/index.html.twig', array(
             'whoamis' => $whoamis,
         ));
     }
@@ -42,28 +42,15 @@ class WhoamiController extends Controller
             $em->persist($whoami);
             $em->flush($whoami);
 
-            return $this->redirectToRoute('whoami_show', array('id' => $whoami->getId()));
+            return $this->redirectToRoute('whoami_index', array('id' => $whoami->getId()));
         }
 
-        return $this->render('whoami/new.html.twig', array(
+        return $this->render('@Tulipe/Admin/whoami/new.html.twig', array(
             'whoami' => $whoami,
             'form' => $form->createView(),
         ));
     }
 
-    /**
-     * Finds and displays a whoami entity.
-     *
-     */
-    public function showAction(Whoami $whoami)
-    {
-        $deleteForm = $this->createDeleteForm($whoami);
-
-        return $this->render('whoami/show.html.twig', array(
-            'whoami' => $whoami,
-            'delete_form' => $deleteForm->createView(),
-        ));
-    }
 
     /**
      * Displays a form to edit an existing whoami entity.
@@ -81,7 +68,7 @@ class WhoamiController extends Controller
             return $this->redirectToRoute('whoami_edit', array('id' => $whoami->getId()));
         }
 
-        return $this->render('whoami/edit.html.twig', array(
+        return $this->render('@Tulipe/Admin/whoami/edit.html.twig', array(
             'whoami' => $whoami,
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),

@@ -14,13 +14,9 @@
         <tbody>
         {% for whoami in whoamis %}
             <tr>
-                <td><a href="{{ path('whoami_show', { 'id': whoami.id }) }}">{{ whoami.id }}</a></td>
                 <td>{{ whoami.text }}</td>
                 <td>
                     <ul>
-                        <li>
-                            <a href="{{ path('whoami_show', { 'id': whoami.id }) }}">show</a>
-                        </li>
                         <li>
                             <a href="{{ path('whoami_edit', { 'id': whoami.id }) }}">edit</a>
                         </li>

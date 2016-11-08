@@ -3,10 +3,6 @@ categorie_index:
     defaults: { _controller: "TulipeBundle:Categorie:index" }
     methods:  GET
 
-categorie_show:
-    path:     /{id}/show
-    defaults: { _controller: "TulipeBundle:Categorie:show" }
-    methods:  GET
 
 categorie_new:
     path:     /new
