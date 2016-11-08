@@ -22,7 +22,7 @@ class CategorieController extends Controller
 
         $categories = $em->getRepository('TulipeBundle:Categorie')->findAll();
 
-        return $this->render('categorie/index.html.twig', array(
+        return $this->render('@Tulipe/categorie/index.html.twig', array(
             'categories' => $categories,
         ));
     }
@@ -42,10 +42,10 @@ class CategorieController extends Controller
             $em->persist($categorie);
             $em->flush($categorie);
 
-            return $this->redirectToRoute('categorie_show', array('id' => $categorie->getId()));
+            return $this->redirectToRoute('categorie_index', array('id' => $categorie->getId()));
         }
 
-        return $this->render('categorie/new.html.twig', array(
+        return $this->render('@Tulipe/categorie/new.html.twig', array(
             'categorie' => $categorie,
             'form' => $form->createView(),
         ));
@@ -81,7 +81,7 @@ class CategorieController extends Controller
             return $this->redirectToRoute('categorie_edit', array('id' => $categorie->getId()));
         }
 
-        return $this->render('categorie/edit.html.twig', array(
+        return $this->render('@Tulipe/categorie/edit.html.twig', array(
             'categorie' => $categorie,
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),

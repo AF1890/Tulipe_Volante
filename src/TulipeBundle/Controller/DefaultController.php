@@ -10,4 +10,9 @@ class DefaultController extends Controller
     {
         return $this->render('TulipeBundle:Default:index.html.twig');
     }
+
+    public function adminAction()
+    {
+        return $this->render('@Tulipe/Admin/index.html.twig');
+    }
 }

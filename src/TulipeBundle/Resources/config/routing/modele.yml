@@ -5,7 +5,7 @@ modele_index:
 
 
 modele_new:
-    path:     /new
+    path:    /new
     defaults: { _controller: "TulipeBundle:Modele:new" }
     methods:  [GET, POST]
 

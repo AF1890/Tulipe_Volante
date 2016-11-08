@@ -18,3 +18,11 @@ tulipe_whoami:
 tulipe_homepage:
     path:     /
     defaults: { _controller: TulipeBundle:Default:index }
+
+#---------------------------------------------------------------------------
+# Appel routes admin
+#---------------------------------------------------------------------------
+
+admin_homepage:
+    path:     /admin
+    defaults: { _controller: TulipeBundle:Default:admin}

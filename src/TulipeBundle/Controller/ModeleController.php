@@ -45,7 +45,7 @@ class ModeleController extends Controller
             return $this->redirectToRoute('modele_new', array('id' => $modele->getId()));
         }
 
-        return $this->render('modele/new.html.twig', array(
+        return $this->render('@Tulipe/Admin/modele/new.html.twig', array(
             'modele' => $modele,
             'form' => $form->createView(),
         ));

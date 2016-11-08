@@ -15,14 +15,10 @@
         <tbody>
         {% for modele in modeles %}
             <tr>
-                <td><a href="{{ path('modele_show', { 'id': modele.id }) }}">{{ modele.id }}</a></td>
                 <td>{{ modele.title }}</td>
                 <td>{{ modele.content }}</td>
                 <td>
                     <ul>
-                        <li>
-                            <a href="{{ path('modele_show', { 'id': modele.id }) }}">show</a>
-                        </li>
                         <li>
                             <a href="{{ path('modele_edit', { 'id': modele.id }) }}">edit</a>
                         </li>
