@@ -22,7 +22,7 @@ class ModeleController extends Controller
 
         $modeles = $em->getRepository('TulipeBundle:Modele')->findAll();
 
-        return $this->render('modele/index.html.twig', array(
+        return $this->render('@Tulipe/Admin/modele/index.html.twig', array(
             'modeles' => $modeles,
         ));
     }
@@ -42,7 +42,7 @@ class ModeleController extends Controller
             $em->persist($modele);
             $em->flush($modele);
 
-            return $this->redirectToRoute('modele_show', array('id' => $modele->getId()));
+            return $this->redirectToRoute('modele_new', array('id' => $modele->getId()));
         }
 
         return $this->render('modele/new.html.twig', array(
@@ -66,7 +66,7 @@ class ModeleController extends Controller
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('modele_edit', array('id' => $modele->getId()));
+            return $this->redirectToRoute('modele_index', array('id' => $modele->getId()));
         }
 
         return $this->render('modele/edit.html.twig', array(

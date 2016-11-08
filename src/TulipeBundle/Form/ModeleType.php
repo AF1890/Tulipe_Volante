@@ -13,7 +13,7 @@ class ModeleType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('titre')->add('contenu')        ;
+        $builder->add('title')->add('content')        ;
     }
     
     /**

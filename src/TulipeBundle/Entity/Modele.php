@@ -17,12 +17,12 @@ class Modele
     /**
      * @var string
      */
-    private $titre;
+    private $title;
 
     /**
      * @var string
      */
-    private $contenu;
+    private $content;
 
 
     /**
@@ -36,49 +36,49 @@ class Modele
     }
 
     /**
-     * Set titre
+     * Set title
      *
-     * @param string $titre
+     * @param string $title
      * @return Modele
      */
-    public function setTitre($titre)
+    public function setTitle($title)
     {
-        $this->titre = $titre;
+        $this->title = $title;
 
         return $this;
     }
 
     /**
-     * Get titre
+     * Get title
      *
      * @return string 
      */
-    public function getTitre()
+    public function getTitle()
     {
-        return $this->titre;
+        return $this->title;
     }
 
     /**
-     * Set contenu
+     * Set content
      *
-     * @param string $contenu
+     * @param string $content
      * @return Modele
      */
-    public function setContenu($contenu)
+    public function setContent($content)
     {
-        $this->contenu = $contenu;
+        $this->content = $content;
 
         return $this;
     }
 
     /**
-     * Get contenu
+     * Get content
      *
      * @return string 
      */
-    public function getContenu()
+    public function getContent()
     {
-        return $this->contenu;
+        return $this->content;
     }
     /**
      * @var \TulipeBundle\Entity\Categorie

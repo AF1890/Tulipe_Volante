@@ -16,8 +16,8 @@
         {% for modele in modeles %}
             <tr>
                 <td><a href="{{ path('modele_show', { 'id': modele.id }) }}">{{ modele.id }}</a></td>
-                <td>{{ modele.titre }}</td>
-                <td>{{ modele.contenu }}</td>
+                <td>{{ modele.title }}</td>
+                <td>{{ modele.content }}</td>
                 <td>
                     <ul>
                         <li>

@@ -8,11 +8,11 @@ tulipe_categorie:
 
 tulipe_modele:
     resource: "@TulipeBundle/Resources/config/routing/modele.yml"
-    prefix:   /modele
+    prefix:   admin/modele
 
 tulipe_whoami:
     resource: "@TulipeBundle/Resources/config/routing/whoami.yml"
-    prefix:   /whoami
+    prefix:   admin/whoami
 
 
 tulipe_homepage:

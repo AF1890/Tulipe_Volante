@@ -52,4 +52,32 @@ class Whoami
     {
         return $this->text;
     }
+    /**
+     * @var \TulipeBundle\Entity\Image
+     */
+    private $image;
+
+
+    /**
+     * Set image
+     *
+     * @param \TulipeBundle\Entity\Image $image
+     * @return Whoami
+     */
+    public function setImage(\TulipeBundle\Entity\Image $image = null)
+    {
+        $this->image = $image;
+
+        return $this;
+    }
+
+    /**
+     * Get image
+     *
+     * @return \TulipeBundle\Entity\Image 
+     */
+    public function getImage()
+    {
+        return $this->image;
+    }
 }
