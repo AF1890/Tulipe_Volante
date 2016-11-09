@@ -40,9 +40,9 @@ class ModeleController extends Controller
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $em->persist($modele);
-            $em->flush($modele);
+            $em->flush();
 
-            return $this->redirectToRoute('modele_new', array('id' => $modele->getId()));
+            return $this->redirectToRoute('modele_index', array('id' => $modele->getId()));
         }
 
         return $this->render('@Tulipe/Admin/modele/new.html.twig', array(
@@ -59,54 +59,49 @@ class ModeleController extends Controller
      */
     public function editAction(Request $request, Modele $modele)
     {
-        $deleteForm = $this->createDeleteForm($modele);
+        $em = $this->getDoctrine()->getEntityManager();
+        $image = $em->getRepository('TulipeBundle:Image')->findOneById($modele->getImage()->getId());
         $editForm = $this->createForm('TulipeBundle\Form\ModeleType', $modele);
         $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
-            $this->getDoctrine()->getManager()->flush();
+            $em = $this->getDoctrine()->getManager();
+            $image->preUpload();
+            $em->persist($modele);
+            $em->flush();
 
             return $this->redirectToRoute('modele_index', array('id' => $modele->getId()));
         }
 
-        return $this->render('modele/edit.html.twig', array(
+        return $this->render('@Tulipe/Admin/modele/edit.html.twig', array(
             'modele' => $modele,
             'edit_form' => $editForm->createView(),
-            'delete_form' => $deleteForm->createView(),
         ));
     }
 
     /**
-     * Deletes a modele entity.
+     * Deletes a Modele entity.
      *
      */
-    public function deleteAction(Request $request, Modele $modele)
-    {
-        $form = $this->createDeleteForm($modele);
-        $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
+    public function deleteAction($id)
+    {
+        if ($id) {
+            $em = $this->getDoctrine()->getEntityManager();
+// Recherche LE MODELE à supprimer parmi LES MODELES
+            $modele = $em->getRepository('TulipeBundle:Modele')->findOneById($id);
+// Recherche L'IMAGE DU MODELE visé
+            $image = $em->getRepository('TulipeBundle:Image')->findOneById($modele->getImage()->getId());
+// Supprime LE MODELE et SON IMAGE associée
             $em->remove($modele);
-            $em->flush($modele);
-        }
+            $em->remove($image);
+// Envoie la requête à la BDD
+            $em->flush();
 
-        return $this->redirectToRoute('modele_index');
-    }
+            return $this->redirectToRoute('modele_index');
+        } else
+            return $this->redirectToRoute('modele_index');
 
-    /**
-     * Creates a form to delete a modele entity.
-     *
-     * @param Modele $modele The modele entity
-     *
-     * @return \Symfony\Component\Form\Form The form
-     */
-    private function createDeleteForm(Modele $modele)
-    {
-        return $this->createFormBuilder()
-            ->setAction($this->generateUrl('modele_delete', array('id' => $modele->getId())))
-            ->setMethod('DELETE')
-            ->getForm()
-        ;
     }
 }
+

@@ -1,7 +1,3 @@
-tulipe_image:
-    resource: "@TulipeBundle/Resources/config/routing/image.yml"
-    prefix:   /image
-
 tulipe_categorie:
     resource: "@TulipeBundle/Resources/config/routing/categorie.yml"
     prefix:   /categorie
