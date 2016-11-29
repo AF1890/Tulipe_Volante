@@ -13,7 +13,9 @@ class ImageType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('url')->add('alt')        ;
+        $builder
+            ->add('file', 'file', array('label' => 'Image', 'required' => false, 'attr' => array('accept' => 'image/*')))
+            ->add('alt');
     }
     
     /**
