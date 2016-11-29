@@ -1,4 +1,21 @@
 
+modele_index:
+    path:     /
+    defaults: { _controller: "TulipeBundle:Modele:index" }
+    methods:  GET
+
+#-----------------------------------------------------------------------------------------------------
+#Appel route utilisateur/client
+#-----------------------------------------------------------------------------------------------------
+
+user_routing:
+    resource: routing/user.yml
+    prefix:   /
+
+#-----------------------------------------------------------------------------------------------------
+#Appel route admin
+#------------
+
 tulipe_categorie:
     resource: "@TulipeBundle/Resources/config/routing/categorie.yml"
     prefix:   admin/categorie

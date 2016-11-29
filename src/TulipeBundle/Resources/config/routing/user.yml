@@ -1,0 +1,16 @@
+tulipe_homepage:
+    path:     /
+    defaults: { _controller: TulipeBundle:Default:index }
+
+tulipe_modele:
+    path:     /modele
+    defaults: { _controller: TulipeBundle:Modele:index }
+
+tulipe_about:
+    path:     /about
+    defaults: { _controller: TulipeBundle:Whoami:index }
+
+#tulipe_contact:
+#    path:     /contact
+#    defaults: { _controller: TuliBundle:Default:contact }
+
